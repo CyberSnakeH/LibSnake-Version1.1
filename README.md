@@ -3,8 +3,11 @@
 # What does this library do?
 
 -> Read Process Memory
+
 -> Write Process Memory
+
 -> Get the pid of a process 
+
 -> Get the module of a process 
 
 # How to use it ?
