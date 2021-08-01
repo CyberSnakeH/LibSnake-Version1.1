@@ -7,6 +7,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <sys/ptrace.h>
+#include <sys/user.h>
 #include <errno.h>
 #include <string.h>
 #include <fcntl.h>
@@ -45,6 +46,6 @@ typedef struct _get_modulebase {
 
 unsigned int GetThePid(const char *targetprocess);
 unsigned long GetModuleBase(unsigned int pid, const char *module);
-
+unsigned long long int GetRegs(unsigned int pid, struct user_regs_struct *X);
 
 #endif
