@@ -104,3 +104,35 @@ unsigned long GetModuleBase(unsigned int pid, const char *module) {
     fclose(get_modulebaseaddr.GetModuleBaseAddrFile);
     return get_modulebaseaddr.ConvertModule;
 }
+
+
+unsigned long long int GetRegs(unsigned int pid, struct user_regs_struct *X) {
+    struct user_regs_struct regs;
+
+    int ret;
+
+    ret = ptrace(PTRACE_ATTACH, pid, NULL, NULL);
+
+    if (ret == -1) {
+        perror("Error we can't attach the process ! \n");
+        return -1;
+    }
+
+    wait(NULL);
+
+    ret = ptrace(PTRACE_GETREGS, pid, NULL, &regs);
+    if (ret == -1) {
+        perror("Error we can't get regs of the process ! \n");
+        return -1;
+    }
+
+    memcpy(X, &regs, sizeof(regs));
+
+    ret = ptrace(PTRACE_DETACH, pid, NULL, NULL);
+    if (ret == -1) {
+        perror("Error we can't detach the process ! \n");
+        return -1;
+    }
+
+    return 0;
+}
