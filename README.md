@@ -2,13 +2,11 @@
 
 # What does this library do?
 
--> Read Process Memory
-
--> Write Process Memory
-
--> Get the pid of a process 
-
--> Get the module of a process 
+-  Read Process Memory
+-  Write Process Memory
+-  Get the pid of a process 
+-  Get the module of a process
+-  Get the registers of a process
 
 # How to use it ?
 
@@ -64,4 +62,5 @@ In version 1.0 of the library you could just do :
 -  Get the module of a process
 
 [which has been added]
+
 Get the registers of a process
