@@ -19,7 +19,7 @@
 # Exemple of use 1 :
 
 ## main.c file :
-```
+```c
 #include <stdio.h>
 #include "MemoryManagement.h"
 
@@ -27,15 +27,27 @@
 
 int main(void) {
 	printf("Hello world \n");
+	struct user_regs_struct X;
+	
+	// Get Pid
 	unsigned int Pid = GetThePid("FakeGame");
+	// Get Module
 	unsigned long Module = GetModuleBase(Pid, "FakeGame.so");
-
+	
 	printf("Pid is %d and Module is %lx\n", Pid, Module);
 	unsigned long ptr1;
 	
+	// Read Process Memory
 	ReadProcessMemory(Addr, &ptr1, Pid);
 	printf("Value of addresse is %d\n", ptr1);
+	//Write Process Memory
 	WriteProcessMemory(Addr, 200, Pid);
+	
+	// Get registers 
+	GetRegs(Pid, &X);
+	// Print rax register for exemple
+	printf("Rax register : 0x%lx\n", X.rax);
+	
 	return 0;
 }
 
