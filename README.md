@@ -10,7 +10,7 @@
 
 # How to use it ?
 
-1) git clone https://github.com/CyberSnakeH/LibSnake-Version1.0.git
+1) git clone https://github.com/CyberSnakeH/LibSnake-Version1.1.git
 2) cd LibSnake-Version1.0
 3) Compile it : bash compile1.bash
 4) Go to the lib folder
