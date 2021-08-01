@@ -59,9 +59,9 @@ My Discord : https://discord.gg/BA9FN25
 
 In version 1.0 of the library you could just do :
 *Read Process Memory
-*Write Process Memory
-*Get the pid of a process 
-*Get the module of a process
+Write Process Memory
+Get the pid of a process 
+Get the module of a process
 
 [which has been added]
 Get the registers of a process
