@@ -11,7 +11,7 @@
 # How to use it ?
 
 1) git clone https://github.com/CyberSnakeH/LibSnake-Version1.1.git
-2) cd LibSnake-Version1.0
+2) cd LibSnake-Version1.1
 3) Compile it : bash compile1.bash
 4) Go to the lib folder
 5) You can now use the libsnake.a library. To do so, include in your folder the library plus the file MemoryManagement.h
